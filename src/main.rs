@@ -1,9 +1,19 @@
 use actix_web::{web, App, HttpResponse, HttpServer, Result};
 use awc::Client;
 use serde_derive::{Deserialize, Serialize};
+use colored::*;
+
+static LOGO: &str = "    __           _
+   / /___  _____(_)     ________  ______   _____  _____
+  / / __ \\/ ___/ /_____/ ___/ _ \\/ ___/ | / / _ \\/ ___/
+ / / /_/ / /  / /_____(__  )  __/ /   | |/ /  __/ /
+/_/\\____/_/  /_/     /____/\\___/_/    |___/\\___/_/\n\n";
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    println!("{}", LOGO.cyan().bold());
+
+    println!("{} Listening on 127.0.0.1:3000", "[server]".blue().bold());
     HttpServer::new(|| {
         App::new()
             .route("/api/generate", web::post().to(generate_completion))
