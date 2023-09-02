@@ -160,4 +160,6 @@
 
 ## What's this?
 
-`lori_server` is an intermediary server to a locally run LLM which implements useful services like web crawling and sandboxed file access using a plugin architecture.
+`lori_server` is an intermediary server to a locally run LLM which implements useful services like web crawling and sandboxed file access using a plugin architecture. 
+
+**This project is currently in alpha and not usable for anything. Expect earth-shattering changes.**
